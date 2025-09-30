@@ -13,11 +13,6 @@
   src: url('fonts/UrbanHeroes.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: 'GrafittiNewYear';
-  src: url('fonts/GrafittiNewYear.otf') format('opentype');
-}
-
 :root {
   --bg: #111;
   --panel: #222;
