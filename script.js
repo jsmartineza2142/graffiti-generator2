@@ -6,31 +6,42 @@ function drawText() {
   // limpiar
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  // lista de fuentes (mismos nombres que en style.css)
+  // lista de fuentes
   const fuentes = [
     "VabioxeGraffiti", 
     "DonGraffiti",
+    "UrbanHeroes",
+    "GrafittiNewYear",
+    "StreetWarsDemo", 
+    "Decipher",
+    "Hesorder",
+    "UrbanCalligraphy",
   ];
 
-  // escoger una al azar
+  // escoger al azar
   const fuenteAleatoria = fuentes[Math.floor(Math.random() * fuentes.length)];
 
-  // aplicar la fuente
+  // aplicar fuente
   ctx.font = "120px " + fuenteAleatoria;
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
 
-  // sombra simple
-  ctx.shadowColor = "rgba(0,0,0,0.8)";
-  ctx.shadowBlur = 8;
+  // sombra
+  ctx.shadowColor = "rgba(0,0,0,0.7)";
+  ctx.shadowBlur = 15;
 
-  // color sólido
-  ctx.fillStyle = "#ff4d4d"; // rojo vivo
+  // gradiente de color
+  const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+  gradient.addColorStop("0", "#ff0055");
+  gradient.addColorStop("1", "#00eaff");
+  ctx.fillStyle = gradient;
+
+  // texto principal
   ctx.fillText(name, canvas.width / 2, canvas.height / 2);
 
-  // contorno negro
-  ctx.lineWidth = 6;
-  ctx.strokeStyle = "#000";
+  // contorno blanco
+  ctx.lineWidth = 8;
+  ctx.strokeStyle = "#fff";
   ctx.strokeText(name, canvas.width / 2, canvas.height / 2);
 }
 
@@ -43,15 +54,8 @@ function downloadImage() {
   link.click();
 }
 
-// eventos al cargar
+// generar QR al cargar
 window.onload = function () {
-  // botón generar
-  document.getElementById("generateBtn").addEventListener("click", drawText);
-
-  // botón descargar
-  document.getElementById("downloadBtn").addEventListener("click", downloadImage);
-
-  // generar QR
   const url = window.location.href;
   new QRCode(document.getElementById("qrcode"), {
     text: url,
