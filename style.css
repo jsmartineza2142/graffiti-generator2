@@ -8,6 +8,10 @@
   src: url('fonts/DonGraffiti.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'UrbanHeroes';
+  src: url('fonts/UrbanHeroes.ttf') format('truetype');
+}
 :root {
   --bg: #111;
   --panel: #222;
