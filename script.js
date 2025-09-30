@@ -10,12 +10,6 @@ function drawText() {
   const fuentes = [
     "VabioxeGraffiti", 
     "DonGraffiti",
-    "UrbanHeroes",
-    "GrafittiNewYear",
-    "StreetWarsDemo", 
-    "Decipher",
-    "Hesorder",
-    "UrbanCalligraphy",
   ];
 
   // escoger una al azar
