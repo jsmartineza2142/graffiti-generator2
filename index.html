@@ -11,13 +11,12 @@
     <h1>Generador de Nombres en Grafiti 🎨</h1>
 
     <div class="controls">
-      <input id="nameInput" type="text" placeholder="Escribe tu nombre..." />
-      <button id="generateBtn">Generar</button>
-      <button id="downloadBtn">Descargar PNG</button>
+      <!-- aquí no hay botón de generar -->
+      <input id="nameInput" type="text" placeholder="Escribe tu nombre..." oninput="drawText()" />
+      <button id="downloadBtn" onclick="downloadImage()">Descargar PNG</button>
     </div>
 
     <div class="canvas-wrap">
-      <!-- tamaño real del canvas -->
       <canvas id="graffitiCanvas" width="1000" height="400"></canvas>
     </div>
 
@@ -29,5 +28,3 @@
   <!-- librería QR -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script src="script.js"></script>
-</body>
-</html>
